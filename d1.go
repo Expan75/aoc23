@@ -61,6 +61,8 @@ func parse(line string) (int, error) {
 
 	if leftLiteral && rightLiteral {
 		return strconv.Atoi(translatedLeftLiteral + translatedRightLiteral)
+	} else if !leftLiteral && !rightLiteral {
+		return strconv.Atoi(left + right)
 	} else if rightLiteral {
 		return strconv.Atoi(left + translatedRightLiteral)
 	} else {
